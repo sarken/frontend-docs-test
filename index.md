@@ -3,7 +3,7 @@ layout: page
 title: Home
 nav_order: 1
 redirect_from:
-	- /font_end_coding/
+  - /front_end_coding/
 ---
 # AO3 Front End Documentation
 
