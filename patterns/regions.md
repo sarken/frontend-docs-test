@@ -1,21 +1,47 @@
 ---
 layout: page
-title: Diagrams of Regions
+title: Regions
 parent: Design Patterns
+nav_order: 1
 ---
+# Regions
+{: .no_toc}
+
+As discussed in the [Front End User Guide](../front-end-user-guide), there are four major regions on the Archive, three of which are included on every page. They are contained within outer and inner wrappers.
+
 While the regions aren't themselves reusable patterns -- each region appears a maximum of once per page -- they do make use of patterns.
 
-* [Regions overview](#regions-overview)
-* [Header region](#header-region)
-    * [Log in block](#header-region-log-in-block)
-    * [Greeting block](#header-region-greeting-block)
-* [Dashboard region](#dashboard-region)
-* [Main region](#main-region)
-* [Footer region](#footer-region)
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+* TOC
+{:toc}
+</details>
 
-<h3 id="regions-overview">Regions overview</h3>
+## Quick reference
 
-The five regions are contained within two wrappers. The outer wrapper surrounds all five regions, while the inner wrapper surrounds the main and dashboard regions.
+<dl class="key"><dt>[...]</dt><dd>always included</dd>
+<dt>{...}</dt><dd>sometimes included</dd></dl>
+
+<pre>
+[outer wrapper]
+  [header region]
+  [inner wrapper]
+    {dashboard region}
+    [main region]
+  [/inner wrapper]
+  [footer region]
+[/outer wrapper]
+</pre>
+
+## HTML diagram
+
+{: .note-title }
+> A note on skip links
+>
+> Skip links are not considered a region and are not visible. However, they are included on every page to allow users of some assistive technology to jump directly to the main content, so we've included them in our diagram.
 
 <div class="diagram">
   <ol>
@@ -52,9 +78,9 @@ The five regions are contained within two wrappers. The outer wrapper surrounds 
   </ol>
 </div>
 
-<h3 id="header-region">Header region</h3>
+## Header region
 
-The header is the first region, styled in [ 13-group-blurb.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/03-region-header.css). It contains our branding, the main navigation, and depending on whether or not you are logged in, the log in or greeting block.
+The header is the first region, styled in [03-region-header.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/03-region-header.css). It contains our branding, the main navigation, and depending on whether or not you are logged in, the login or greeting block.
 
 <div class="diagram">
   <ol>
@@ -80,7 +106,7 @@ The header is the first region, styled in [ 13-group-blurb.css](https://github.c
               </li>
             </ol>
           </li>
-        <li><a href="#header-region-log-in-block">log in block</a> or <a href="#header-region-greeting-block">greeting block</a></li>
+        <li><code>&lt;div id="<a href="#login-block">login</a> or <a href="#greeting-block">greeting</a>"&gt;</code></li>
         <li>
           <code>&lt;h3 class="landmark heading"&gt;</code>
         </li>
@@ -169,9 +195,9 @@ The header is the first region, styled in [ 13-group-blurb.css](https://github.c
 
 The hyphenated class names are not in the view files and are only applied when the user has JavaScript enabled; therefore, they should not be used for styling the header elements.
 
-<h4 id="header-region-log-in-block">Log in block</h4>
+## Login block
 
-The log in block consists of a link that summons the small log in form when the user has JavaScript enabled or that takes the user to the log in page when they have JavaScript disabled.
+The login block consists of a link that summons the small login form when the user has JavaScript enabled or that takes the user to the log in page when they have JavaScript disabled.
 
 <div class="diagram">
   <ol>
@@ -275,7 +301,7 @@ The log in block consists of a link that summons the small log in form when the 
   </ol>
 </div>
 
-<h4 id="header-region-greeting-block">Greeting block</h4>
+### Greeting block
 
 The greeting block contains the user's icon and navigation items that are only available to logged in users.
 
@@ -368,9 +394,9 @@ The greeting block contains the user's icon and navigation items that are only a
   </ol>
 </div>
 
-<h3 id="dashboard-region">Dashboard region</h3>
+## Dashboard region
 
-The dashboard is the second region, styled in [ 04-region-dashboard.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/04-region-dashboard.css). It does not appear on every page, but when it *is* on the page, it comes after the header and before the main region.
+The dashboard is the second region, styled in [04-region-dashboard.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/04-region-dashboard.css). It does not appear on every page, but when it *is* on the page, it comes after the header and before the main region.
 
 <div class="diagram">
   <ol>
@@ -420,13 +446,104 @@ The dashboard is the second region, styled in [ 04-region-dashboard.css](https:/
   </ol>
 </div>
 
-<h3 id="main-region">Main region</h3>
+## Main region
 
-The structure of `#main` varies significantly from page to page. Most of the remaining style sheets deal with elements found in main; the [ 05-region-main.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/05-region-main.css) style sheet only covers very basic styles, like how wide it should be when appearing with a dashboard.
+The structure of `#main` varies significantly from page to page. Most of the remaining style sheets deal with elements found in main; the [05-region-main.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/05-region-main.css) stylesheet only covers very basic styles, like how wide it should be when appearing with a dashboard.
 
-<h3 id="footer-region">Footer region</h3>
+The structure of an individual page's main region is commented in the views. Each section is announced by a heading, although many of these headings are not displayed in the Archive default style; these are called landmarks. Like the skip links, they are designed to help users of assistive technology jump around on the page.
 
-The footer is the final region, and its styles are in [ 06-region-footer.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/06-region-footer.css).
+```html
+<!--Descriptive page name and system messages, descriptions, and instructions.-->
+<h2> </h2>
+
+<!--Subnavigation, sorting and actions.-->
+<h3 class="landmark"> </h3>
+
+<!--main content-->
+<h3 class="landmark"> </h3>
+
+<!--Subnavigation, sorting and actions.-->
+<h3 class="landmark"> </h3>
+```
+
+### Example structure
+
+Here's a brief look at the structure of a filterable work index, like the [work index for The X-Files](https://archiveofourown.org/tags/The%20X-Files/works):
+
+<div class="diagram">
+  <ol>
+    <li>#main
+      <ol>
+        <li>h2</li>
+        <li>h3 .landmark</li>
+        <li>ul .navigation
+          <ol>
+            <li>li <span>a</span></li>
+            <li>li <span>span .current</span></li>
+          </ol>
+        </li>
+        <li>h4 .landmark</li>
+        <li>ol .pagination
+          <ol>
+            <li>li .previous <span>a</span></li>
+            <li>li <span>span .current</span></li>
+            <li>li <span>a</span></li>
+            <li>li...</li>
+            <li>li .next <span>a</span></li>
+          </ol>
+        </li>
+        <li>h3 .landmark</li>
+        <li>ol .work index
+          <ol>
+            <li>blurb</li>
+            <li>blurb</li>
+            <li>blurb</li>
+            <li>blurb...</li>
+          </ol>
+        </li>
+        <li>form .filters
+          <ol>
+            <li>h3 .landmark</li>
+            <li>fieldset
+              <ol>
+                <li>legend</li>
+                <li>dl .filters
+                  <ol>
+                    <li>dt .landmark</li>
+                    <li>dd .submit <span>input</span></li>
+                    <li>dt</li>
+                    <li>dd</li>
+                    <li>dt...</li>
+                    <li>dd...</li>
+                    <li>dt .landmark</li>
+                    <li>dd .submit <span>input</span></li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li>h4 .landmark</li>
+        <li>ol .pagination
+          <ol>
+            <li>li .previous <span>a</span></li>
+            <li>li <span>span .current</span></li>
+            <li>li <span>a</span></li>
+            <li>li...</li>
+            <li>li .next <span>a</span></li>
+          </ol>
+        </li>
+        <li>div .clear</li>
+      </ol>
+    </li>
+  </ol>
+</div>
+
+Other indices on the Archive, such as [a tag's bookmark index](https://archiveofourown.org/tags/The%20X-Files/bookmarks) and [the collections index](https://archiveofourown.org/collections), follow the same pattern. There are also variations of it that don't have filters, such as [the main works index](https://archiveofourown.org/works), or that have filters and a dashboard, such as [a user's bookmark index](https://archiveofourown.org/users/testy/bookmarks).
+
+## Footer region
+
+The footer is the final region, and its styles are in [06-region-footer.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/06-region-footer.css).
 
 <div class="diagram">
   <ol>
@@ -464,12 +581,11 @@ The footer is the final region, and its styles are in [ 06-region-footer.css](ht
                     </ol>
                   </li>
                 </ol>
-              </li>
-              <li>
-                <code>&lt;li class="module group"&gt;</code>
-              </li>
-            </ol>
-          </li>
+            </li>
+            <li>
+              <code>&lt;li class="module group"&gt;</code>
+            </li>
+          </ol>
         </li>
       </ol>
     </li>

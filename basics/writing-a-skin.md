@@ -24,7 +24,9 @@ The skin system is also a great way to get familiar with CSS in general or the A
 
 Here we'll walk through a simple skin that modifies the Archive's default appearance by changing fonts and colors, adding images, and adjusting margins and borders.
 
-For our colors and images, we'll be using a stripe pattern called [sing together](https://www.colourlovers.com/pattern/850926/sing_together) and its color palette, [like fireflies](https://www.colourlovers.com/palette/1172215/like_fireflies), both of which are by [electroCUTE!](https://www.colourlovers.com/lover/electroCUTE%21). We've uploaded our image to [tinypic](http://tinypic.com), but you can host your images anywhere. Because you are the only one seeing your skin, you probably don't need to worry about running out of bandwidth.
+![A user dashboard with our skin: a bright diagonal striped background, translucent white main content, and translucent yellow dashboard sections](/images/writing_a_skin_preview.png)
+
+For our colors and images, we'll be using a stripe pattern called [sing together](https://www.colourlovers.com/pattern/850926/sing_together) and its color palette, [like fireflies](https://www.colourlovers.com/palette/1172215/like_fireflies), both of which are by [electroCUTE!](https://www.colourlovers.com/lover/electroCUTE%21). You'll need to save and upload the background image to an image host, but because you are the only one seeing your skin, you probably don't need to worry about running out of bandwidth.
 
 Once you've entered the style block from the first step into the CSS field, you'll need to select "Submit" after the form and "Use" on the following page to see the changes. After that, using the "Update" button on the skin form will save the changes and let you see them. It's a good idea to do it after each step so you can understand exactly what changes we've made.
 
@@ -37,11 +39,11 @@ Once you've entered the style block from the first step into the CSS field, you'
     }
     ```
 
-2.  Now let's use our striped pattern for the background of the page. We'll also set the lightest color from the corresponding palette as the fallback color to make sure we don't see the usual white even if our image fails to load. We'll do this with `background`, which is a [CSS Shorthand](css-shorthand) property that lets you set values for multiple properties, including `background-color` and `background-image`, at the same time.
+2.  Now let's use our striped pattern for the background of the page. We'll also set the lightest color from the corresponding palette as the fallback color to make sure we don't see the usual white even if our image fails to load. We'll do this with `background`, which is a [CSS shorthand property](css#shorthand-properties) that lets you set values for multiple properties, including `background-color` and `background-image`, at the same time.
 
     ```css
     body {
-      background: #F6F6C6 url(https://i47.tinypic.com/2mfc7ev.png);
+      background: #F6F6C6 url(https://example.com/sing_together.png);
     }
     ```
 

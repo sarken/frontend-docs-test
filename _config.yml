@@ -19,22 +19,33 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Front End Docs
-email: otw-coders@transformativeworks.org
-description: Guide to the HTML and CSS used in otwcode/otwarchive.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
-
-twitter_username: ao3org
-github_username: otwcode
 
 # Build settings
 theme: just-the-docs
 plugins:
   - jekyll-redirect-from
+
+# Callouts
+# https://just-the-docs.github.io/just-the-docs/docs/ui-components/callouts/
+callouts_level: quiet
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -55,20 +66,3 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-
-callouts_level: quiet
-callouts:
-  highlight:
-    color: yellow
-  important:
-    title: Important
-    color: blue
-  new:
-    title: New
-    color: green
-  note:
-    title: Note
-    color: purple
-  warning:
-    title: Warning
-    color: red

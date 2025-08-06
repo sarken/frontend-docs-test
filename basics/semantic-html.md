@@ -7,7 +7,7 @@ nav_order: 1
 # Semantic HTML
 {: .no_toc }
 
-In our [Coding Standards](coding-standards), we say that with semantic <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="Cascading Style Sheets">CSS</abbr> we separate our content from our presentation. HyperText Markup Language and Cascading Style Sheets are flexible, accessible, and logical ways to mark up content for the web.
+In our [Coding Standards](../coding-standards), we say that with semantic <abbr title="HyperText Markup Language">HTML</abbr> and <abbr title="Cascading Style Sheets">CSS</abbr> we separate our content from our presentation. HyperText Markup Language and Cascading Style Sheets are flexible, accessible, and logical ways to mark up content for the web.
 
 <details open markdown="block">
   <summary>

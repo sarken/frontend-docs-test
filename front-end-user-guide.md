@@ -22,7 +22,7 @@ This is a detailed theoretical guide to the Archive interface, focusing on the s
 
 ## Our philosophy
 
-The AO3 front end, which is [HTML](semantic-html) and [CSS](css), uses a classification system that might be new to you in some ways, but will be familiar in others.
+The AO3 front end, which is [HTML](/basics/semantic-html) and [CSS](/basics/css), uses a classification system that might be new to you in some ways, but will be familiar in others.
 
 Rules on the Archive are written in modules, and generally in order from the most general or global rules, that affect the most things on the most pages, to the most specific rules, that move a single element in one context. We continually combine and simplify rules, finding commonalities of purpose behind ways of displaying information, working towards a simple and consistent interface.
 
@@ -194,20 +194,20 @@ Within the region `#main` the view changes. There are N basic views:
 
 An index is a list of works, users, collections, or bookmarks (e.g. the [work index for Bandom](http://archiveofourown.org/tags/Bandom/works) or the [ bookmark index for Supernatural](http://archiveofourown.org/tags/Supernatural/bookmarks)).
 
-The metadata describing the items in an index view is grouped in a [blurb](patterns-blurb).
+The metadata describing the items in an index view is grouped in a [blurb](/patterns/blurb).
 
 ### Work view
 
-Works are viewed on their own pages (e.g. [Sliding Doors](http://archiveofourown.org/works/149319)). They are similar to a blog post: metadata at the top and comments at the bottom.
+Works are viewed on their own pages (e.g. [Sliding Doors](https://archiveofourown.org/works/149319)). They are similar to a blog post: metadata at the top and comments at the bottom.
 
 ### Bookmark view
 
-Bookmarks can be viewed on their own (e.g. a [single bookmark for Sliding Doors](http://archiveofourown.org/bookmarks/8020331)) or grouped with all the bookmarks of a work (e.g. the [list of bookmarks for Sliding Doors](http://archiveofourown.org/works/149319/bookmarks)).
+Bookmarks can be viewed on their own (e.g. a [single bookmark for Sliding Doors](https://archiveofourown.org/bookmarks/8020331)) or grouped with all the bookmarks of a work (e.g. the [list of bookmarks for Sliding Doors](https://archiveofourown.org/works/149319/bookmarks)).
 
 ### User, collection view
 
-Each identity (e.g. the [user testy](http://archiveofourown.org/users/testy) or the [Yuletide collection](http://archiveofourown.org/collections/yuletide)) has its own set of pages, listing activities like works written, works viewed, personal profile, preference settings, and so on. There's a persistent dashboard navigation on these pages.
+Each identity (e.g. the [user testy](https://archiveofourown.org/users/testy) or the [Yuletide collection](https://archiveofourown.org/collections/yuletide)) has its own set of pages, listing activities like works written, works viewed, personal profile, preference settings, and so on. There's a persistent dashboard navigation on these pages.
 
 ### Profile view
 
-Profile view is only used in user and collection views (e.g. the [Yuletide collection profile](http://archiveofourown.org/collections/yuletide/profile) and [testy's profile](http://archiveofourown.org/users/testy/profile)).
+Profile view is only used in user and collection views (e.g. the [Yuletide collection profile](https://archiveofourown.org/collections/yuletide/profile) and [testy's profile](https://archiveofourown.org/users/testy/profile)).

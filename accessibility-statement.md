@@ -43,7 +43,7 @@ The Archive is an international development, made by people who speak lots of di
 
 1.  We aim to make our help and FAQs accessible in multiple ways. 
 
-2.  We have tried to provide help that is not biased towards sighted or mouse methods of using archive, by describing pages and interactions in several different ways, but we know we could always use help at doing this better, so please do [send us feedback](http://archiveofourown.org/support).
+2.  We have tried to provide help that is not biased towards sighted or mouse methods of using archive, by describing pages and interactions in several different ways, but we know we could always use help at doing this better, so please do [send us feedback](https://archiveofourown.org/support).
 
 3.  Our help buttons are styled text, so you can make them bigger if they're hard to see.
 
@@ -59,7 +59,7 @@ The Archive is an international development, made by people who speak lots of di
 
 2.  Links are written to make sense out of context.
 
-3.  Navigation and action links are visually styled as large and distinct buttons. They can be scaled up with text zoom to make them easier to click on with a mouse or joystick. We offer a number of skins, such as the[Massive Buttons skin](http://archiveofourown.org/skins/895), that restyle the buttons to make them easier to see and click.
+3.  Navigation and action links are visually styled as large and distinct buttons. They can be scaled up with text zoom to make them easier to click on with a mouse or joystick. We offer a number of skins, such as the [Massive Buttons skin](https://archiveofourown.org/skins/895), that restyle the buttons to make them easier to see and click.
 
 ## Forms
 
