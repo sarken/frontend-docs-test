@@ -8,7 +8,7 @@ redirect_from:
 {: .note-title }
 > Looking for general documenation?
 >
-> You can find additional documentation on a broader range of subjects on the [otwarchive wiki](https://github.com/otwcode/otwarchive/wiki).
+> You can find the rest of our development documentation on the [otwarchive wiki](https://github.com/otwcode/otwarchive/wiki).
 
 # AO3 Front End Documentation
 
