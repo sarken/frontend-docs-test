@@ -2,6 +2,9 @@
 layout: page
 title: Comments Pattern
 parent: Design Patterns
+nav_order: 10
+redirect_from:
+  - /front_end_coding/patterns/comments
 ---
 # Comments Pattern
 {: .no_toc }

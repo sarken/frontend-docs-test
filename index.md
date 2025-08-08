@@ -23,27 +23,14 @@ Our coding practice may be radically different from anything you've done before.
 
 * [Coding Standards](coding-standards)
 * [Front End User Guide](front-end-user-guide)
-* [Coding Accessible Tables](coding-accessible-tables)
 * [Style Guide](style-guide)
 * [Classes](classes)
-	* [CSS Taxonomy](taxonomy)
+	* [CSS Taxonomy](classes-taxonomy)
 * [Em Scale](em-scale)
 * [Accessibility Statement](accessibility-statement)
 
 ### How we structure things
 
-Design patterns are a major part of how we code things. While not every new feature will fit an existing pattern, we strive to reuse as much XHTML and CSS as possible.
-
-* [XHTML Page Templates](patterns/xhtml-page-templates)
-* [Diagrams of Regions](patterns/regions)
-* [Design Pattern: Actions](patterns/actions)
-* [Design Pattern: Interactions](patterns/interactions)
-* [Design Pattern: Index](patterns/index)
-* [Design Pattern: Blurb](patterns/blurb)
-* [Design Pattern: Listbox](patterns/listbox)
-* [Design Pattern: Meta](patterns/meta)
-* [Design Pattern: Preface](patterns/preface)
-* [Design Pattern: Comments](patterns/comments)
-* [Design Pattern: Stats](patterns/stats)
+[Design patterns](/patterns) are a major part of how we code things.
 
 

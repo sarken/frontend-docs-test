@@ -2,6 +2,9 @@
 layout: page
 title: Interactions Pattern
 parent: Design Patterns
+nav_order: 2
+redirect_from:
+  - /front_end_coding/patterns/interactions
 ---
 # Interactions Pattern
 {: .no_toc}

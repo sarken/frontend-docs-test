@@ -2,6 +2,9 @@
 layout: page
 title: Meta Pattern
 parent: Design Patterns
+nav_order: 7
+redirect_from:
+  - /front_end_coding/patterns/meta
 ---
 # Meta Pattern
 {: .no_toc}

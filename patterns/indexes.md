@@ -2,6 +2,9 @@
 layout: page
 title: Index Pattern
 parent: Design Patterns
+nav_order: 4
+redirect_from:
+  - /front_end_coding/patterns/pattern-index
 ---
 # Index Pattern
 {: .no_toc}

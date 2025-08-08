@@ -2,11 +2,13 @@
 layout: page
 title: Tables
 parent: Design Patterns
+redirect_from:
+  - /front_end_coding/accessible-tables
 ---
 # Tables
 {: .no_toc }
 
-We don't use many tables in the Archive, but it's worth knowing how to write them well. A table is the right way to mark up three or more pieces of information in a matrix for cross referencing. It is not the right way to do anything else.
+Tables aren't unique to us, and we don't use many in the Archive, but it's important to know how to write them well. A table is the right way to mark up three or more pieces of information in a matrix for cross referencing. It is not the right way to do anything else.
 
 <details open markdown="block">
   <summary>

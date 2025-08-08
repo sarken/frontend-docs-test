@@ -1,7 +1,8 @@
 ---
 layout: page
 title: Class Taxonomy
-parent: Classes
+parent: Our Front End
+nav_order: 2
 ---
 # Class Taxonomy
 {: .no_toc }

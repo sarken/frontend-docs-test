@@ -1,15 +1,12 @@
 ---
 layout: page
-title: Front End User Guide
-nav_order: 3
+title: Our Front End
+nav_order: 5
 ---
-# Front End User Guide
+# Our Front End
 {: .no_toc }
 
-{: .note }
-The content on this page is in need of review and may no longer be accurate.
-
-This is a detailed theoretical guide to the Archive interface, focusing on the stylesheets. We also have a practical step by step tutorial on [writing a skin](/basics/writing-a-skin/).
+This is a detailed theoretical guide to the Archive interface, focusing on the stylesheets. We also have a practical step-by-step tutorial on [writing a skin](/basics/writing-a-skin/).
 
 <details markdown="block">
   <summary>
@@ -26,15 +23,23 @@ The AO3 front end, which is [HTML](/basics/semantic-html) and [CSS](/basics/css)
 
 Rules on the Archive are written in modules, and generally in order from the most general or global rules, that affect the most things on the most pages, to the most specific rules, that move a single element in one context. We continually combine and simplify rules, finding commonalities of purpose behind ways of displaying information, working towards a simple and consistent interface.
 
-To put this another way: In our stylesheet, classes are laid out so more general classes (`.blurb`, `.index`, `.work`) are modified by more specific classes further down the cascade. Just like a chair can be modified by the adjective hard, a blurb can be modified by the class collection.
+To put this another way: in a single stylesheet, classes are laid out so more general classes (`.blurb`, `.index`, `.work`) are modified by more specific classes further down the cascade. Just like a chair can be modified by the adjective hard, a blurb can be modified by the class collection.
 
 The core process in all front end design is the naming of things. By really thinking about each element we deal with, and describing it simply and aptly, we create the most *readable* (and therefore flexible, accessible, and maintainable) interface we can. This is true for [CSS classes](classes), for style rules, for bug fixing, for HTML markup, and for page design.
 
-## Levels
+## Stylesheets
 
-The Archive has 32 stylesheets, the first 29 of which are always applied. Of the remaining eight, three are media-specific (handheld for mobile devices, aural for speech synthesizers, and print for printers), four are Internet Explorer conditionals (used only when the site is accessed in the corresponding version of Internet Explorer), and one is our sandbox (always used, but home to temporary or experimental styles we aren't ready to put into the first 29). On your development environment, you will see all of the stylesheets listed in the document head. The order they are listed in is the cascade hierarchy.
+The Archive has 33 stylesheets, the first 22 of which are always applied. Of the remaining 11:
 
-Things are a little different on our test and production environments, which use our skin system to combine the stylesheets. If you look at the page source on either of these environments, you will notice that the first 29 stylesheets have been grouped into a single file named 01\_site\_screen\_.css. (These skin stylesheets are cached, so if a change fails to show up after being deployed to test or production, the first step to figuring out why is to ask the person in charge of the code push to recache the stylesheets.)
+- two are role-specific (translator and admin),
+- two are specific to relative screen width (midsize and narrow)
+- two are media-specific (aural for speech synthesizers, and print for printers),
+- four are Internet Explorer conditionals (used only when the site is accessed in the corresponding version of Internet Explorer), and
+- one is our sandbox (always used, but home to temporary or experimental styles we aren't ready to put into the first 29).
+
+On your development environment, you will see all of the stylesheets listed in the document head. The order they are listed in is the cascade hierarchy.
+
+Things are a little different on our staging and production environments, which use our skin system to combine the stylesheets. If you look at the page source on either of these environments, you will notice that the first 22 stylesheets have been grouped into a single file named 01\_site\_screen\_.css. (These skin stylesheets are cached, so if a change fails to show up after being deployed to test or production, the first step to figuring out why is to ask the person in charge of the code push to recache the stylesheets.)
 
 ### Core
 
@@ -56,13 +61,13 @@ The header is the region containing the site name and logo, the log-in form or l
 
 #### Dashboard
 
-The dashboard is the only region that does not appear on every page. It most often contains navigation specific to users and collection pages, and it generally takes the form of a sidebar on the left of such pages. (It appears beneath the header and above the main content on very small screens and mobile devices.) All styles specific to elements contained in the dashboard belong in the dashboard stylesheet.
+The dashboard is the only region that does not appear on every page. It most often contains navigation specific to users and collection pages, and it generally takes the form of a sidebar on the left of such pages. (It appears beneath the header and above the main content on narrow screen.) All styles specific to elements contained in the dashboard belong in the dashboard stylesheet.
 
 #### Main
 
 The main region includes most of the site content. While filters, which typically appear as a sidebar on the right of index pages, are part of the main content, the dashboard is *not*.
 
-Although the main region contains the majority of our content, this stylesheet contains perhaps the fewest rules. Here we focus on `<div id="main">` itself (e.g. setting it off to the right to give the dashboard room) rather than its contents, which we instead style in stylesheets 7 - 24.
+Although the main region contains the majority of our content, this stylesheet contains perhaps the fewest rules. Here we focus on `<div id="main">` itself (e.g., setting it off to the right to give the dashboard room) rather than its contents, which we instead style in stylesheets 7 - 24.
 
 #### Footer
 
@@ -70,19 +75,19 @@ The footer primarily contains informational links, but some quick customization 
 
 ### Interactions
 
-Interactions are means through which users provide us information. Generally, this means forms and form elements. We also have a few JavaScript-based tools that help users fill out forms (e.g. the tag autocomplete, a calendar widget, a drag-and-drop for reordering series or chapters) that we include here, since they serve as custom form elements.
+Interactions are means through which users provide us information. Generally, this means forms and form elements. We also have a few JavaScript-based tools that help users fill out forms (e.g., the tag autocomplete, a calendar widget, a drag-and-drop for reordering series or chapters) that we include here, since they serve as custom form elements.
 
 ### Actions
 
-Actions are links, buttons, and the elements that contain the links and buttons (e.g. lists that hold pagination links). For convenience, we include submit buttons here rather than in interactions; we often display links and submit buttons side-by-side (e.g. the Subscribe option on a work is an input and the Share option next to it is a link) and thus style them similarly.
+Actions are links, buttons, and the elements that contain the links and buttons (e.g., lists that hold pagination links). For convenience, we include submit buttons here rather than in interactions; we often display links and submit buttons side-by-side (e.g., the Subscribe option on a work is an input and the Share option next to it is a link) and thus style them similarly.
 
 ### Modifiers
 
-The next two stylesheets, 09-roles-states and 10-types-groups primarily contain modifiers. The stylesheet named 10-types-groups also contains groups, but this needs to be reorganized. 
+The next two stylesheets, 09-roles-states and 10-types-groups primarily contain modifiers. The stylesheet named 10-types-groups also contains groups.
 
 #### States
 
-States modify the appearance of an element based on its status: whether an inbox message has been read, whether a tag is canonical, whether a list can be expanded. These classes tend to be non-permanent, changing based on user actions (e.g. a work stops being `.draft` once it is posted).
+States modify the appearance of an element based on its status: whether an inbox message has been read, whether a tag is canonical, whether a list can be expanded. These classes tend to be non-permanent, changing based on user actions (e.g., a work stops being `.draft` once it is posted).
 
 #### Types
 
@@ -94,7 +99,7 @@ Relationships describe how an element relates to something else: `.own` might de
 
 #### Roles
 
-Roles are generally used to describe elements that are tied to users with certain permissions. Since administrator and administrator-granted roles (e.g. tag wranglers, translators) have areas of the site that are only accessible to them and require extensive styling, they have their own zone and role stylesheets farther down the cascade. Styles for less complex roles (e.g. `.mod` or `.participant` for a challenge or collection) would go here.
+Roles are generally used to describe elements that are tied to users with certain permissions. Since administrator and administrator-granted roles (e.g., tag wranglers) have areas of the site that are only accessible to them and require extensive styling, they have their own zone and role stylesheets farther down the cascade. Styles for less complex roles (e.g., `.mod` or `.participant` for a challenge or collection) would go here.
 
 ### Groups
 
@@ -114,15 +119,15 @@ An index is a list group: `dl.index`, `ul.index`, or `ol.index`. We use them in 
 
 #### Listbox
 
-A listbox is a container for an index; we use them when a page is designed to show multiple indices. For example, a user's home shows indices of works, series, and bookmarks that the user has created. Each index is grouped inside a listbox. If a user only has bookmarks, their bookmarks are still displayed in a listbox because the page *could* contain other indices given more user data (e.g. if the user posts a work, a works index will be added).
+A listbox is a container for an index; we use them when a page is designed to include multiple indices. For example, a user's home includes indices of works, series, and bookmarks that the user has created. Each index is grouped inside a listbox. If a user only has bookmarks, their bookmarks are still displayed in a listbox because the page *could* contain other indices given more user data (e.g., if the user posts a work, a works index will be added).
 
 #### Meta
 
-Meta is a group that displays an overview of the tags, associations, and statistics we keep for a single item: a user, a work, a series, a collection. It's always inside a wrapper.
+Meta is a group that provides an overview of the tags, associations, and statistics we keep for a single item: a user, a work, a series, a collection. It's always inside a wrapper.
 
 #### Blurb
 
-Blurbs are standalone metadata, most often displayed in an index list.
+Blurbs are standalone metadata, most often presented in an index list.
 
 #### Preface
 
@@ -130,9 +135,14 @@ A preface is the group of information at the start of a work or chapter. We modi
 
 #### Comment
 
-Comments are groups containing messages from users or guests. Like blurbs, they are most often displayed in an index list.
+Comments are groups containing messages from users or guests. Like blurbs, they are most often presented in an index list.
 
 ### Zones
+
+{: .caution-title }
+> Outdated
+>
+> This section may contain outdated information.
 
 Zones are types of `#main` regions. There are five zones that make up stylesheets 16 - 20.
 
@@ -154,11 +164,11 @@ Pages for tags, tag sets, and tag wrangling belong to the tags zone.
 
 #### Translation
 
-The Archive will eventually be translated into additional languages. Styles for the translation interface will go here.
+The Archive will eventually be translated into additional languages. Style overrides for the third-party in-context editor may go here.
 
 ### User roles
 
-These stylesheets override the Archive default styles for certain types of logged-in users. This is necessary to accommodate certain role-specific options. We sometimes further modify regions here (e.g. the footer background is teal for users who are logged in as administrators).
+These stylesheets override the Archive default styles for certain types of logged-in users. This is necessary to accommodate certain role-specific options. We sometimes further modify regions here (e.g., the footer background is teal for administrators).
 
 #### Translator role
 
@@ -169,6 +179,11 @@ Style overrides for users who are logged in as translators will go here.
 Style overrides for users who are logged in as administrators go here. 
 
 ### Stylesheet roles
+
+{: .caution-title }
+> Outdated
+>
+> This section contains outdated information.
 
 There are seven stylesheets with styles that are only applied when the Archive is being accessed with specific hardware or software.
 
@@ -182,9 +197,14 @@ These stylesheets make the site more compatible with older versions of Internet 
 
 ### Sandbox
 
-The sandbox is where we put experimental styles and temporary style fixes. It is loaded *after* user skins, which means it overrides their styles. It can be handy for development, but it is generally best to make sure your styles are incorporated into the proper stylesheet before asking us to use your changes.
+The sandbox is where we put experimental styles and temporary style fixes. It is loaded *after* user skins, which means it overrides their styles. It can be handy for development, but it is generally best to make sure your styles are incorporated into the proper stylesheet before submitting a pull request.
 
 ## Page-by-page views
+
+{: .caution-title }
+> Incomplete
+>
+> This section is a draft.
 
 Views follow regular layouts and contain repeating groups of HTML elements. These groups are described with [classes](classes). Rails generates some classes, and those contain underscores; you can use them to target rules at individual pages.
 
@@ -192,17 +212,17 @@ Within the region `#main` the view changes. There are N basic views:
 
 ### Index view
 
-An index is a list of works, users, collections, or bookmarks (e.g. the [work index for Bandom](http://archiveofourown.org/tags/Bandom/works) or the [ bookmark index for Supernatural](http://archiveofourown.org/tags/Supernatural/bookmarks)).
+An index is a list of works, users, collections, or bookmarks (e.g., the [work index for Bandom](https://archiveofourown.org/tags/Bandom/works) or the [bookmark index for Supernatural](https://archiveofourown.org/tags/Supernatural/bookmarks)).
 
 The metadata describing the items in an index view is grouped in a [blurb](/patterns/blurb).
 
 ### Work view
 
-Works are viewed on their own pages (e.g. [Sliding Doors](https://archiveofourown.org/works/149319)). They are similar to a blog post: metadata at the top and comments at the bottom.
+Works are viewed on their own pages (e.g., [Sliding Doors](https://archiveofourown.org/works/149319)). They are similar to a blog post: metadata at the top and comments at the bottom.
 
 ### Bookmark view
 
-Bookmarks can be viewed on their own (e.g. a [single bookmark for Sliding Doors](https://archiveofourown.org/bookmarks/8020331)) or grouped with all the bookmarks of a work (e.g. the [list of bookmarks for Sliding Doors](https://archiveofourown.org/works/149319/bookmarks)).
+Bookmarks can be viewed on their own (e.g., a [single bookmark for Sliding Doors](https://archiveofourown.org/bookmarks/8020331)) or grouped with all the bookmarks of a work (e.g., the [list of bookmarks for Sliding Doors](https://archiveofourown.org/works/149319/bookmarks)).
 
 ### User, collection view
 

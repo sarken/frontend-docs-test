@@ -2,6 +2,9 @@
 layout: page
 title: Listbox Pattern
 parent: Design Patterns
+nav_order: 6
+redirect_from:
+  - /front_end_coding/patterns/listbox
 ---
 # Listbox Pattern
 {: .no_toc }

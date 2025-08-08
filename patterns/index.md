@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Design Patterns
+nav_order: 6
 ---
 # Design Patterns
 

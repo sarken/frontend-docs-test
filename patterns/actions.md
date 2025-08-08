@@ -2,6 +2,9 @@
 layout: page
 title: Actions Pattern
 parent: Design Patterns
+nav_order: 3
+redirect_from:
+  - /front_end_coding/patterns/actions
 ---
 # Actions Pattern
 {: .no_toc}

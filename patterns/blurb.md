@@ -2,6 +2,9 @@
 layout: page
 title: Blurb Pattern
 parent: Design Patterns
+nav_order: 8
+redirect_from:
+  - /front_end_coding/patterns/blurb
 ---
 # Blurb Pattern
 {: .no_toc}

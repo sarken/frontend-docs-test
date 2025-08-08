@@ -32,17 +32,15 @@ plugins:
 # https://just-the-docs.github.io/just-the-docs/docs/ui-components/callouts/
 callouts_level: quiet
 callouts:
-  highlight:
+  caution:
+    title: Caution
     color: yellow
-  important:
-    title: Important
-    color: blue
   new:
     title: New
     color: green
   note:
     title: Note
-    color: purple
+    color: blue
   warning:
     title: Warning
     color: red

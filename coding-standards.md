@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Coding Standards
+nav_order: 3
 ---
 # Coding Standards
 {: .no_toc }

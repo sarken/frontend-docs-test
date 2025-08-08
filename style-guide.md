@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Style Guide
+nav_order: 4
 ---
 # Style Guide
 {: .no_toc }

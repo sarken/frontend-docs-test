@@ -2,6 +2,9 @@
 layout: page
 title: Preface Pattern
 parent: Design Patterns
+nav_order: 9
+redirect_from:
+  - /front_end_coding/patterns/preface
 ---
 # Preface Pattern
 {: .no_toc}
