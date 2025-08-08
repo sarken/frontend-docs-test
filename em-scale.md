@@ -1,11 +1,12 @@
 ---
 layout: page
 title: Em Scale
+parent: Coding Standards
 ---
 # Em Scale
 {: .no_toc }
 
-The Archive style sheets use [ems](http://www.w3.org/TR/CSS21/syndata.html#length-units) to size text and most elements, and to specify margins and padding.
+As mentioned in our [coding standards](coding-standards#screen), the Archive stylesheets use [ems](http://www.w3.org/TR/CSS21/syndata.html#length-units) to size text and most elements, and to specify margins and padding.
 
 <details open markdown="block">
   <summary>

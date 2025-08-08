@@ -84,14 +84,14 @@ However, there are times when using an absolute measurement is the best option. 
 
 We have a separate stylesheet that controls the appearance of pages printed from the Archive. Text in our print stylesheet is sized using points.
 
-### Our CSS formatting conventions
+### CSS formatting conventions
 
 Since our stylesheets are edited by multiple coders, we have developed a house style that will allow us to easily read, track changes to, and avoid mistakes in our styles.
 
 A ruleset written for the default Archive style should be formatted with:
 
 * Muliple selectors on the same line, separated by a comma and a single space
-  * When writing rulesets for official site skins, each selector is places on a separate line
+  * When writing rulesets for official site skins, each selector is placed on a separate line
 * The opening curly brace on the same line as the selector, preceded by a single space
 * Each property indented and on a new line  
   * CSS 2.1 properties indented by two spaces
@@ -120,3 +120,7 @@ Here is an example:
   border-bottom-color: #400;
 }
 ```
+
+#### Combining selectors
+
+In our stylesheets, we only combine selectors within a [supertype class](classes-taxonomy#supertypes) section. We don't use streamlining software to find and combine all selectors with the same rules. This makes code really hard to maintain, and can destroy a complex cascade design, so make sure you don't ever do this.

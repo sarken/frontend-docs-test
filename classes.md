@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Classes
-parent: Our Front End
-nav_order: 1
+parent: Front End Guide
+nav_order: 2
 ---
 # Classes
 {: .no_toc }
@@ -21,6 +21,7 @@ Classes are used to add structural meaning. A good class describes more specific
 ## Rules
 
 * Classes are general and written in English (U.S). Ideally, they are short words in common usage.
+* Classes describe en element's function, not presentation.
 * Do **not** give every element on every page a unique class. Classes are inherited from their parent element and can be combined together to style elements uniquely.
 * Do **not** give elements very specific names.
 * Classes are listed from the most specific to the least, e.g. `work blurb group` or `unread comment group`.
@@ -44,7 +45,7 @@ For example, we use a dotted line to underline all tag links: `a.tag { border-bo
 
 ## Rails classes
 
-Rails automatically generates a unique class on `<div id="main">` on each page, named by the view partial that `div` calls. This means that each page on the Archive can have rules set independently, which is very useful for tweaking the layout, but should not be used as a core technique.
+Rails automatically generates a unique class on `<div id="main">` on each page, named by the view partial that `div` calls. This means that each page can have rules set independently, which is very useful for tweaking the layout, but should not be used as a core technique.
 
 * The [Media Index](https://archiveofourown.org/media) has the Rails class `media-index`.
-* The [works index for testy](https://archiveofourown.org/users/testy/works) has the Rails class `works-index`, and we also tell it to automatically add `dashboard` and `filtered` to the page because it contains dashboard navigation and filters.
+* The [works index for testy](https://archiveofourown.org/users/testy/works) has the Rails class `works-index`, and we also tell Rails to automatically add `dashboard` and `filtered` to the page because it contains dashboard navigation and filters.

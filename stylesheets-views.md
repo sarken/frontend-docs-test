@@ -1,12 +1,13 @@
 ---
 layout: page
-title: Our Front End
-nav_order: 5
+title: Stylesheets & Views
+parent: Front End Guide
+nav_order: 1
 ---
-# Our Front End
+# Stylesheets & Views
 {: .no_toc }
 
-This is a detailed theoretical guide to the Archive interface, focusing on the stylesheets. We also have a practical step-by-step tutorial on [writing a skin](/basics/writing-a-skin/).
+Our stylsheets contain the CSS that styles the HTML in our views.
 
 <details markdown="block">
   <summary>
@@ -16,16 +17,6 @@ This is a detailed theoretical guide to the Archive interface, focusing on the s
 * TOC
 {:toc}
 </details>
-
-## Our philosophy
-
-The AO3 front end, which is [HTML](/basics/semantic-html) and [CSS](/basics/css), uses a classification system that might be new to you in some ways, but will be familiar in others.
-
-Rules on the Archive are written in modules, and generally in order from the most general or global rules, that affect the most things on the most pages, to the most specific rules, that move a single element in one context. We continually combine and simplify rules, finding commonalities of purpose behind ways of displaying information, working towards a simple and consistent interface.
-
-To put this another way: in a single stylesheet, classes are laid out so more general classes (`.blurb`, `.index`, `.work`) are modified by more specific classes further down the cascade. Just like a chair can be modified by the adjective hard, a blurb can be modified by the class collection.
-
-The core process in all front end design is the naming of things. By really thinking about each element we deal with, and describing it simply and aptly, we create the most *readable* (and therefore flexible, accessible, and maintainable) interface we can. This is true for [CSS classes](classes), for style rules, for bug fixing, for HTML markup, and for page design.
 
 ## Stylesheets
 
@@ -139,16 +130,20 @@ Comments are groups containing messages from users or guests. Like blurbs, they 
 
 ### Zones
 
-{: .caution-title }
-> Outdated
->
-> This section may contain outdated information.
-
 Zones are types of `#main` regions. There are five zones that make up stylesheets 16 - 20.
 
 #### System
 
-The system stylesheet covers the splash page, documentation pages, log-in and sign-up pages, and abuse and support forms.  
+The system stylesheet has eight subsections:
+
+  1. Splash (i.e., the homepage)
+  2. Sessions (e.g., the login page and password reset page)
+  3. Docs (e.g., the about page and wrangling guidelines)
+  4. Comms (unused)
+  5. Support (i.e., the Support and Policy & Abuse forms)
+  6. FAQ
+  7. TOS, including the TOS FAQ and the TOS pop-up
+  8. Proxy notice, which is a warning that displays on proxy sites but is never used on AO3 itself
 
 #### Home
 
@@ -164,7 +159,17 @@ Pages for tags, tag sets, and tag wrangling belong to the tags zone.
 
 #### Translation
 
-The Archive will eventually be translated into additional languages. Style overrides for the third-party in-context editor may go here.
+The Archive will eventually be translated into additional languages. This may one day be needed for style overrides for the third-party in-context editor.
+
+### Userstuff
+
+The userstuff stylesheet styles blocks of user-entered text such as comments or summaries, admin-entered text like news posts or FAQs, and large blocks of hardcoded text like the [About Us page](https://archiveofourown.org/about).
+
+Styling for works can be found in `#workskin`.
+
+### System messages
+
+Error, success, and caution messages as well as notes. This also styles the admin banners that are displayed on every page of the site during certain events.
 
 ### User roles
 
@@ -172,28 +177,23 @@ These stylesheets override the Archive default styles for certain types of logge
 
 #### Translator role
 
-Style overrides for users who are logged in as translators will go here.
+Style overrides for users who are logged in as translators will go here. This will probably be merged with the translation zone.
 
 #### Admin role
 
-Style overrides for users who are logged in as administrators go here. 
+Style overrides for logged-in administrators go here.
 
 ### Stylesheet roles
 
-{: .caution-title }
-> Outdated
->
-> This section contains outdated information.
-
-There are seven stylesheets with styles that are only applied when the Archive is being accessed with specific hardware or software.
+There are eight stylesheets with styles that are only applied when the Archive is being accessed with specific hardware or software.
 
 #### Media roles
 
-These stylesheets provide information for devices with screens smaller than 480px, screen readers, and printers.
+These stylesheets provide information for devices with narrow screens, screen readers, and printers. The 62em and 48em breakpoints were not chosen to correspond to any particular device, but to the size at which the Archive layout needs to be adjusted to improve usability.
 
 #### Internet Explorer roles
 
-These stylesheets make the site more compatible with older versions of Internet Explorer. We have stylesheets for Internet Explorer 5 - 8, but we are only actively supporting Internet Explorer 8.
+These stylesheets make the site more compatible with Internet Explorer. We have stylesheets for Internet Explorer 5 - 8, but we are only actively supporting Internet Explorer 8.
 
 ### Sandbox
 

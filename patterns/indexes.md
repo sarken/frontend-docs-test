@@ -11,7 +11,7 @@ redirect_from:
 
 Index is a very general class of list. You'll most often see it containing blurbs, or as the content in a listbox, but it isn't restricted to those. Index has very few rules; it's a flexible grouping class. 
 
-It doesn't have its own stylesheet, but index styles are declared in [the style sheet named 10-types-groups.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/10-types-groups.css). Index is part of the group [supertype](../classes-taxonomy#supertypes)
+It doesn't have its own stylesheet, but index styles are declared in [the stylesheet named 10-types-groups.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/10-types-groups.css). Index is part of the group [supertype](../classes-taxonomy#supertypes)
 
 <details open markdown="block">
   <summary>

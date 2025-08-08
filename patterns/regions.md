@@ -7,7 +7,7 @@ nav_order: 1
 # Regions
 {: .no_toc}
 
-As discussed in the [Front End User Guide](../front-end-user-guide), there are four major regions on the Archive, three of which are included on every page. They are contained within outer and inner wrappers.
+As discussed in [Stylesheets & Views](../stylesheets-views), there are four major regions on the Archive, three of which are included on every page. They are contained within outer and inner wrappers.
 
 While the regions aren't themselves reusable patterns -- each region appears a maximum of once per page -- they do make use of patterns.
 
@@ -42,6 +42,8 @@ While the regions aren't themselves reusable patterns -- each region appears a m
 > A note on skip links
 >
 > Skip links are not considered a region and are not visible. However, they are included on every page to allow users of some assistive technology to jump directly to the main content, so we've included them in our diagram.
+
+Because the page in our diagram has a `#dashboard` region, the `#main` region is given the `.dashboard` [modifier](../class-taxonomy#modifiers) class.
 
 <div class="diagram">
   <ol>
@@ -448,7 +450,7 @@ The dashboard is the second region, styled in [04-region-dashboard.css](https://
 
 ## Main region
 
-The structure of `#main` varies significantly from page to page. Most of the remaining style sheets deal with elements found in main; the [05-region-main.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/05-region-main.css) stylesheet only covers very basic styles, like how wide it should be when appearing with a dashboard.
+The structure of `#main` varies significantly from page to page. Most of the remaining stylesheets deal with elements found in main; the [05-region-main.css](https://github.com/otwcode/otwarchive/blob/master/public/stylesheets/site/2.0/05-region-main.css) stylesheet only covers very basic styles, like how wide it should be when appearing with a dashboard (`#main.dashboard`).
 
 The structure of an individual page's main region is commented in the views. Each section is announced by a heading, although many of these headings are not displayed in the Archive default style; these are called landmarks. Like the skip links, they are designed to help users of assistive technology jump around on the page.
 

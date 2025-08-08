@@ -233,7 +233,7 @@ If you look at a bookmark index, you will see bookmark blurbs use it as well:
 
 `<li id="bookmark_5678" class="bookmark blurb group" role="article">`.
 
-Let's examine the first generic blurb rule block from the blurb style sheet:
+Let's examine the first generic blurb rule block from the blurb stylesheet:
 
 ```css
 .blurb ul li, .blurb dd ul li {
